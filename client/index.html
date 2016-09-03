@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+       <link rel="stylesheet" href="./css/style.css">
+       <title> Immutable Todo </title>
+       <script src="/socket.io/socket.io.js"></script>
+       <script>
+	 var socket = io();
+	 socket.on('server event', function (data) {
+	   console.log(data);
+	   socket.emit('client event', { socket: 'io' });
+	});
+      </script> 
+   </head>
+    <body>
+	<div id="app"> </div>
+	<script src="bundle.js"></script>
+    </body>
+  </html>
